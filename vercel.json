@@ -1,7 +1,11 @@
 {
-  "version": 3,
-  "build": {
-    "buildCommand": "cd portfolio && npm install && npm run build",
-    "distDir": "portfolio/dist"
-  }
+  "version": 2,
+  "functions": {
+    "api/contact.ts": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "installCommand": "npm install && cd portfolio && npm install",
+  "buildCommand": "cd portfolio && npm run build",
+  "outputDirectory": "portfolio/dist"
 }
