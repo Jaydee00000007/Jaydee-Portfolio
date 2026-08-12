@@ -1,12 +1,21 @@
 import nodemailer from "nodemailer";
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_APP_PASSWORD,
-  },
-});
+const GMAIL_USER = process.env.GMAIL_USER;
+const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
+const MAIL_TO = process.env.MAIL_TO;
+
+function createTransporter() {
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: GMAIL_USER,
+      pass: GMAIL_APP_PASSWORD,
+    },
+    tls: {
+      rejectUnauthorized: false,
+    },
+  });
+}
 
 function validateContact(body: any) {
   if (!body || typeof body !== "object") {
@@ -24,6 +33,13 @@ function validateContact(body: any) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) return "Email is invalid.";
 
+  return null;
+}
+
+function validateEnv() {
+  if (!GMAIL_USER) return "Missing GMAIL_USER environment variable.";
+  if (!GMAIL_APP_PASSWORD) return "Missing GMAIL_APP_PASSWORD environment variable.";
+  if (!MAIL_TO) return "Missing MAIL_TO environment variable.";
   return null;
 }
 
@@ -47,16 +63,18 @@ export default async function handler(req: any, res: any) {
     return res.status(405).json({ success: false, error: "Method not allowed." });
   }
 
+  const envError = validateEnv();
+  if (envError) {
+    console.error("Contact API env error:", envError);
+    return res.status(500).json({ success: false, error: envError });
+  }
+
   const error = validateContact(req.body);
   if (error) {
     return res.status(400).json({ success: false, error });
   }
 
-  const recipients = (process.env.MAIL_TO || "")
-    .split(",")
-    .map((value) => value.trim())
-    .filter(Boolean);
-
+  const recipients = MAIL_TO.split(",").map((value) => value.trim()).filter(Boolean);
   if (recipients.length === 0) {
     return res.status(500).json({
       success: false,
@@ -65,8 +83,9 @@ export default async function handler(req: any, res: any) {
   }
 
   try {
+    const transporter = createTransporter();
     await transporter.sendMail({
-      from: process.env.GMAIL_USER,
+      from: GMAIL_USER,
       to: recipients,
       subject: `Portfolio contact from ${req.body.name}`,
       replyTo: req.body.email,
@@ -74,11 +93,12 @@ export default async function handler(req: any, res: any) {
     });
 
     return res.status(200).json({ success: true });
-  } catch (sendError) {
+  } catch (sendError: any) {
     console.error("Email send error:", sendError);
     return res.status(500).json({
       success: false,
       error: "Unable to send the email. Please try again later.",
+      details: sendError?.message,
     });
   }
 }

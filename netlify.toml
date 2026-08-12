@@ -2,3 +2,4 @@
   base = "portfolio"
   command = "npm install && npm run build"
   publish = "dist"
+  functions = "netlify/functions"
