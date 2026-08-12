@@ -5,7 +5,16 @@ import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 import { PROFILE } from "./data";
 
-const API_URL = import.meta.env["VITE_CONTACT_API_URL"] as string | undefined;
+const rawApiUrl = import.meta.env["VITE_CONTACT_API_URL"] as string | undefined;
+const isLocalhost =
+  typeof window !== "undefined" &&
+  (window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1");
+
+const API_URL =
+  rawApiUrl && (isLocalhost || !rawApiUrl.includes("localhost"))
+    ? rawApiUrl
+    : "/api/contact";
 
 export function Contact() {
   const [name, setName] = useState("");
