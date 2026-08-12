@@ -12,7 +12,7 @@ export function Hero() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <Reveal>
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-border px-3 py-1 text-xs tracking-widest text-muted-foreground uppercase">
+            <p className="mb-6 flex items-center justify-start gap-2 rounded-full border border-border px-3 py-1 text-xs tracking-widest text-muted-foreground uppercase text-start">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               Available for freelance work
             </p>

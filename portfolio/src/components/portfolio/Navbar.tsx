@@ -32,11 +32,17 @@ export function Navbar() {
       <nav className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8">
         <a
           href="#top"
-          className="min-w-0 font-display text-lg font-extrabold tracking-tight"
+          className="min-w-0 inline-flex items-center gap-3 font-display text-lg font-extrabold tracking-tight"
         >
-          <img src="/logo.png" alt="Logo" className="h-8 w-8" />
-          Ope<span className="text-primary">.</span>
-          <span className="text-muted-foreground"> {PROFILE.nickname}</span>
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="h-10 w-10 rounded-full object-cover shadow-lg shadow-black/10"
+          />
+          <span>
+            Opeyemi<span className="text-primary">.</span>
+            <span className="text-muted-foreground"> {PROFILE.nickname}</span>
+          </span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

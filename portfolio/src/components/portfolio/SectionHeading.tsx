@@ -15,7 +15,7 @@ export function SectionHeading({
         {index} — {title}
       </p>
       {children && (
-        <h2 className="text-display text-4xl text-balance sm:text-5xl">
+        <h2 className="text-display text-4xl text-balance text-start sm:text-5xl">
           {children}
         </h2>
       )}

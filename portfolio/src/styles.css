@@ -84,6 +84,11 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  p,
+  h1 {
+    text-align: start;
+  }
+
   ::selection {
     background: var(--primary);
     color: var(--primary-foreground);
