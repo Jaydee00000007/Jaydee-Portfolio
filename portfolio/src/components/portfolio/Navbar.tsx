@@ -34,6 +34,7 @@ export function Navbar() {
           href="#top"
           className="min-w-0 font-display text-lg font-extrabold tracking-tight"
         >
+          <img src="/logo.png" alt="Logo" className="h-8 w-8" />
           Ope<span className="text-primary">.</span>
           <span className="text-muted-foreground"> {PROFILE.nickname}</span>
         </a>
