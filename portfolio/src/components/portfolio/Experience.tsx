@@ -17,7 +17,7 @@ export function Experience() {
                 <p className="font-mono text-xs tracking-widest text-primary uppercase">
                   {job.period}
                 </p>
-                <h3 className="mt-2 font-display text-2xl font-bold">
+                <h3 className="mt-2 font-display text-2xl font-bold text-start">
                   {job.role}{" "}
                   <span className="text-muted-foreground">· {job.company}</span>
                 </h3>
