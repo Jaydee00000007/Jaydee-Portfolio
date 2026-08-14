@@ -1,4 +1,3 @@
-import type { Handler } from "@netlify/functions";
 import nodemailer from "nodemailer";
 
 const GMAIL_USER = process.env.GMAIL_USER;
@@ -12,7 +11,7 @@ function validateEnv() {
   return null;
 }
 
-function validateContact(body: any) {
+function validateContact(body) {
   if (!body || typeof body !== "object") return "Request body must be JSON.";
 
   const name = String(body.name || "").trim();
@@ -29,7 +28,7 @@ function validateContact(body: any) {
   return null;
 }
 
-function formatHtmlEmail({ name, email, message }: { name: string; email: string; message: string }) {
+function formatHtmlEmail({ name, email, message }) {
   return `
     <div style="font-family: Arial, sans-serif; color: #111;">
       <h2>New contact request from My Portfolio</h2>
@@ -54,7 +53,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const handler: Handler = async (event) => {
+export const handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
@@ -72,7 +71,7 @@ const handler: Handler = async (event) => {
     };
   }
 
-  let body: any;
+  let body;
   try {
     body = JSON.parse(event.body || "{}");
   } catch {
@@ -111,7 +110,7 @@ const handler: Handler = async (event) => {
       statusCode: 200,
       body: JSON.stringify({ success: true }),
     };
-  } catch (sendError: any) {
+  } catch (sendError) {
     console.error("Email send error:", sendError);
     return {
       statusCode: 500,
@@ -120,4 +119,3 @@ const handler: Handler = async (event) => {
   }
 };
 
-export { handler };
