@@ -44,15 +44,21 @@ export function Projects() {
                       </span>
                     ))}
                   </div>
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 self-start rounded-full border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
-                  >
-                    View project
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
+                  {p.href ? (
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-6 inline-flex items-center gap-2 self-start rounded-full border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
+                    >
+                      View repository
+                      <ArrowUpRight className="h-4 w-4" />
+                    </a>
+                  ) : (
+                    <span className="mt-6 inline-flex self-start rounded-full border border-border px-4 py-2 text-sm font-semibold text-muted-foreground">
+                      Private project
+                    </span>
+                  )}
                 </div>
               </article>
             </Reveal>
