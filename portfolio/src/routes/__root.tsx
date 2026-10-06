@@ -82,14 +82,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       meta: [
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "Lovable App" },
-        { name: "description", content: "Lovable Generated Project" },
-        { name: "author", content: "Lovable" },
-        { property: "og:title", content: "Lovable App" },
-        { property: "og:description", content: "Lovable Generated Project" },
+        { title: "Opeyemi Adeparusi | Frontend Developer" },
+        { name: "description", content: "Frontend Developer building responsive web interfaces and applications with React, Vue, JavaScript and TypeScript." },
+        { name: "author", content: "Opeyemi Adeparusi" },
+        { property: "og:title", content: "Opeyemi Adeparusi | Frontend Developer" },
+        { property: "og:description", content: "Frontend Developer building responsive web interfaces and applications with React, Vue, JavaScript and TypeScript." },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: "@Lovable" },
+        
       ],
       links: [
         {
