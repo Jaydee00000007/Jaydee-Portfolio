@@ -44,21 +44,34 @@ export function Projects() {
                       </span>
                     ))}
                   </div>
-                  {p.href ? (
-                    <a
-                      href={p.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="mt-6 inline-flex items-center gap-2 self-start rounded-full border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
-                    >
-                      View repository
-                      <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  ) : (
-                    <span className="mt-6 inline-flex self-start rounded-full border border-border px-4 py-2 text-sm font-semibold text-muted-foreground">
-                      Private project
-                    </span>
-                  )}
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    {p.demo ? (
+                      <a
+                        href={p.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
+                      >
+                        Live Demo
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    ) : null}
+                    {p.href ? (
+                      <a
+                        href={p.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm font-semibold transition-colors hover:border-primary hover:text-primary"
+                      >
+                        GitHub
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    ) : (
+                      <span className="inline-flex rounded-full border border-border px-4 py-2 text-sm font-semibold text-muted-foreground">
+                        Private project
+                      </span>
+                    )}
+                  </div>
                 </div>
               </article>
             </Reveal>
