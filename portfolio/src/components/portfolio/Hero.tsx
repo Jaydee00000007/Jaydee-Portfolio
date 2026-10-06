@@ -14,7 +14,7 @@ export function Hero() {
           <Reveal>
             <p className="mb-6 inline-flex justify-start items-center gap-2 rounded-full border border-border px-2 py-1 text-xs tracking-widest text-muted-foreground uppercase">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              Available for freelance work
+              Available for frontend opportunities
             </p>
           </Reveal>
           <Reveal delay={80}>
@@ -62,9 +62,9 @@ export function Hero() {
               className="relative aspect-4/5 w-full rounded-[1.5rem] object-cover grayscale transition-all duration-500 hover:grayscale-0"
             />
             <div className="absolute -bottom-5 -left-5 rounded-xl border border-border bg-card px-4 py-3 shadow-lg">
-              <p className="font-display text-2xl font-extrabold">1+</p>
+              <p className="font-display text-2xl font-extrabold">React · Vue</p>
               <p className="text-xs text-muted-foreground">
-                years building for the web
+                Frontend development
               </p>
             </div>
           </div>
