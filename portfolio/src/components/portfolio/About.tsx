@@ -20,11 +20,10 @@ export function About() {
                 world.
               </p>
               <p>
-                I enjoy solving problems through code, learning new technologies
-                and creating digital products that are both visually engaging
-                and easy to use. I&apos;m continuously sharpening my craft and
-                looking for meaningful projects to contribute to while growing
-                as a developer.
+                I enjoy turning requirements into practical interfaces, working through
+                frontend problems and refining details across desktop and mobile.
+                My current focus is strengthening React, Vue, TypeScript and
+                API-driven application development.
               </p>
             </div>
           </Reveal>
@@ -33,7 +32,7 @@ export function About() {
               {[
                 ["Based in", "Ikorodu, Lagos"],
                 ["Focus", "Frontend & UI"],
-                ["Core stack", SKILLS.slice(0, 3).join(", ")],
+                ["Core stack", "React, TypeScript, Vue"],
               ].map(([k, v]) => (
                 <div key={k} className="bg-card p-6">
                   <dt className="text-xs tracking-widest text-muted-foreground uppercase">
