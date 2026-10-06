@@ -6,6 +6,7 @@ import { Hero } from "@/components/portfolio/Hero";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
+import { Toaster } from "sonner";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <Toaster position="top-right" richColors />
     </div>
   );
 }
