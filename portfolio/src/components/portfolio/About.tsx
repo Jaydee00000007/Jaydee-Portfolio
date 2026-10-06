@@ -33,7 +33,6 @@ export function About() {
               {[
                 ["Based in", "Ikorodu, Lagos"],
                 ["Focus", "Frontend & UI"],
-                ["Projects shipped", "20+"],
                 ["Core stack", SKILLS.slice(0, 3).join(", ")],
               ].map(([k, v]) => (
                 <div key={k} className="bg-card p-6">
