@@ -26,9 +26,9 @@ export function Hero() {
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl">
-              {PROFILE.role} crafting modern, responsive interfaces that load
-              fast, read clearly and feel effortless — from first pixel to
-              shipped product.
+I build responsive web interfaces and frontend applications with React, Vue,
+              JavaScript and TypeScript — turning ideas into clear, functional
+              digital experiences.
             </p>
           </Reveal>
           <Reveal delay={240}>
