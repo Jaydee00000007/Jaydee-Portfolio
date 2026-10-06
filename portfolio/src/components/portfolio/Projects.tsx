@@ -8,7 +8,7 @@ export function Projects() {
     <section id="work" className="border-t border-border py-24">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading index="03" title="Selected Work">
-          Projects built end to end.
+          Practical frontend projects built to solve real interface and product problems.
         </SectionHeading>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((p, i) => (
