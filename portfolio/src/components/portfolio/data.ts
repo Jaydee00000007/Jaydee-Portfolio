@@ -51,7 +51,7 @@ export const PROJECTS = [
     image:
       "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=80",
     alt: "Branding and packaging materials representing the Paruxx project",
-    href: "https://github.com/Jaydee00000007/Paruxx",
+    href: "",
     year: "2026",
   },
   {
