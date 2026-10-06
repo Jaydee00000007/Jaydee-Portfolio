@@ -36,8 +36,6 @@ function Index() {
         <About />
         <Skills />
         <Projects />
-        <Experience />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />
